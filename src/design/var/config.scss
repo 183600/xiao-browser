@@ -1,0 +1,18 @@
+// 保持与 `prefixCls` 一致，字段位于 `settings\designSetting.ts` 文件
+// To be consistent with `prefixCls`, the field is located in the `settings\designSetting.ts` file
+$tonyname: tony;
+
+// 顶级层级-慎用
+$top-zindex: 9999999;
+
+// 弹窗层级
+$popup-zindex: 1001;
+
+// 遮罩层级
+$mask-zindex: 999;
+
+// 次级弹窗层级
+$sec-popup-zindex: 101;
+
+// 次级遮罩层级
+$sec-mask-zindex: 99;

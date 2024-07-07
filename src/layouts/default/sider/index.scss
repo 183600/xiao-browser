@@ -1,0 +1,259 @@
+$prefix-cls: '#{$tonyname}-layout-sideBar';
+$layout-mix-sider: '#{$tonyname}-layout-mix-sider';
+
+@mixin MixSiderHover {
+  color: var(--sider-text-hover-color);
+  background: var(--sider-background-hover-color);
+}
+@mixin MixSiderActiveColor {
+  color: var(--white-color);
+  background-color: var(--primary-color);
+}
+@mixin MixSiderActiveHover {
+  color: var(--white-color);
+  background-color: var(--primary-color);
+  filter: brightness(1.1);
+}
+
+// Mix sider
+.#{$layout-mix-sider} {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 101;
+  height: 100%;
+  overflow: hidden;
+  background-color: var(--sider-background-color);
+  transition: var(--t-base);
+
+  &-dom {
+    height: 100%;
+    overflow: hidden;
+    transition: var(--t-base);
+  }
+
+  &-logo {
+    display: flex;
+    justify-content: center;
+    height: var(--header-height);
+
+    > img {
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  > .scrollbar {
+    height: calc(100% - var(--header-height));
+  }
+
+  &-module {
+    position: relative;
+    padding: 0 4px var(--side-width, 48px);
+
+    &__item {
+      position: relative;
+      width: 100%;
+      padding-bottom: 100%;
+      margin-bottom: 8px;
+      line-height: 1;
+      color: var(--sider-text-color);
+      text-align: center;
+      cursor: pointer;
+      border-radius: var(--radius-base);
+      transition: var(--t-base);
+
+      &:hover {
+        @include MixSiderHover();
+      }
+
+      &--active {
+        font-weight: 700;
+        @include MixSiderActiveColor();
+
+        &:hover {
+          @include MixSiderActiveHover();
+        }
+
+      }
+
+      &-inner {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0 2px;
+        overflow: hidden;
+      }
+    }
+
+    &__icon {
+      flex-shrink: 0;
+      margin-bottom: 8px;
+      font-size: 16px;
+      transition: var(--t-base);
+    }
+
+    &__name {
+      max-height: 32px;
+      margin-bottom: 0;
+      overflow: hidden;
+      font-size: 12px;
+      line-height: 16px;
+      transition: var(--t-base);
+    }
+  }
+
+  &-trigger {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--side-width);
+    height: var(--side-width);
+    color: var(--sider-text-color);
+    cursor: pointer;
+    background-color: var(--sider-background-color);
+    transition: var(--t-base);
+
+    &:hover {
+      @include MixSiderHover();
+    }
+
+    > svg {
+      width: 50%;
+      height: 50%;
+    }
+  }
+
+  &-menu-list {
+    position: fixed;
+    top: 0;
+    z-index: 101;
+    width: 200px;
+    height: 100%;
+    color: var(--sider-text-color);
+    background-color: var(--sider-background-color);
+    transition: var(--t-base);
+
+    &::after {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      content: '';
+      border-left: 1px solid var(--sider-text-color);
+      opacity: 0.25;
+    }
+
+    &__title {
+      position: relative;
+      display: flex;
+      align-items: center;
+      height: var(--header-height);
+      padding-right: var(--header-height);
+      padding-left: 24px;
+      overflow: hidden;
+      font-size: 20px;
+      color: var(--sider-text-color);
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      visibility: hidden;
+      opacity: 0;
+
+      &::after {
+        position: absolute;
+        right: 24px;
+        bottom: 0;
+        left: 24px;
+        content: '';
+        border-bottom: 1px solid var(--sider-text-color);
+        opacity: 0.25;
+      }
+
+      &.show {
+        visibility: visible;
+        opacity: 1;
+        transition: var(--t-base);
+      }
+
+      .pushpin {
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: var(--header-height);
+        height: var(--header-height);
+        cursor: pointer;
+
+        &:hover {
+          @include MixSiderHover();
+        }
+      }
+    }
+
+    &__content {
+      height: calc(100% - var(--header-height));
+      overflow: visible;
+
+      .scrollbar__wrap {
+        height: 100%;
+        overflow-x: hidden;
+      }
+
+      .scrollbar__bar.is-horizontal {
+        display: none;
+      }
+    }
+  }
+
+  &-drag-bar {
+    position: absolute;
+    top: 0;
+    right: -1px;
+    width: 3px;
+    height: 100%;
+    cursor: ew-resize;
+    background-color: transparent;
+    box-shadow: 0 0 4px 0 rgba(28, 36, 56, 0.15);
+
+    &:hover {
+      background-color: var(--primary-color);
+    }
+  }
+
+  // Mini Mode
+  &.mini {
+    .#{$layout-mix-sider}-module {
+      padding: 0 0 var(--side-width, 48px);
+
+      &__item {
+        border-radius: 0;
+
+        &-inner {
+          padding: 0;
+        }
+      }
+
+      &__icon {
+        margin-bottom: 0;
+        font-size: 32px;
+      }
+
+      &__name {
+        display: none;
+      }
+    }
+  }
+}

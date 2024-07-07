@@ -1,0 +1,61 @@
+$prefix-cls: '#{$tonyname}-basic-list';
+
+.#{$prefix-cls} {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
+  &-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 0;
+    color: rgba(0, 0, 0, 0.85);
+    border-bottom: 1px solid var(--border-color-light);
+
+    &--card {
+      border-bottom: none;
+    }
+
+    &-meta {
+      display: flex;
+      flex: 1;
+      align-items: flex-start;
+      max-width: 100%;
+
+      &-thumb {
+        margin-right: 16px;
+
+        > img {
+          width: 64px;
+          height: 64px;
+        }
+      }
+
+      &-content {
+        flex: 1 0;
+        width: 0;
+        color: rgba(0, 0, 0, 0.85);
+      }
+
+      &-title {
+        margin-bottom: 4px;
+        font-size: 14px;
+        line-height: 1.5  ;
+        color: rgba(0, 0, 0, 0.85);
+
+        > a {
+          color: inherit;
+          transition: all 0.3s;
+        }
+      }
+
+      &-description {
+        font-size: 14px;
+        line-height: 1.5;
+        color: rgba(0, 0, 0, 0.45);
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+/* 动画内容已通过js形式创建 */
+
+/* expand */
+.tyani-expand {
+  @include transition-default();
+
+  /* expand-x */
+  &-x {
+    @include transition-default();
+  }
+}

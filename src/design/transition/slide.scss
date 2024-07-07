@@ -1,0 +1,43 @@
+/* slide */
+.tyani-slide {
+  @include transition-default();
+
+  &-enter-from,
+  &-leave-to {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+
+  /* slide-reverse */
+  &-reverse {
+    @include transition-default();
+
+    &-enter-from,
+    &-leave-to {
+      opacity: 0;
+      transform: translateY(15px);
+    }
+  }
+
+  /* slide-x */
+  &-x {
+    @include transition-default();
+
+    &-enter-from,
+    &-leave-to {
+      opacity: 0;
+      transform: translateX(-15px);
+    }
+
+    /* slide-x-reverse */
+    &-reverse {
+      @include transition-default();
+
+      &-enter-from,
+      &-leave-to {
+        opacity: 0;
+        transform: translateX(15px);
+      }
+    }
+  }
+}

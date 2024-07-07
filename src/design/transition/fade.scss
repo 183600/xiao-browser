@@ -1,0 +1,87 @@
+/* fade */
+.tyani-fade {
+  &-enter-active,
+  &-leave-active {
+    transition: opacity 0.2s ease-in-out;
+  }
+
+  &-enter-from,
+  &-leave-to {
+    opacity: 0;
+  }
+
+  /* fade-slide */
+  &-slide {
+    &-leave-active,
+    &-enter-active {
+      transition: all 0.3s;
+    }
+
+    &-enter-from {
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+
+    &-leave-to {
+      opacity: 0;
+      transform: translateX(30px);
+    }
+  }
+
+  /* fade-bottom */
+  &-bottom {
+    &-enter-active,
+    &-leave-active {
+      transition: opacity 0.25s, transform 0.3s;
+    }
+
+    &-enter-from {
+      opacity: 0;
+      transform: translateY(-10%);
+    }
+
+    &-leave-to {
+      opacity: 0;
+      transform: translateY(10%);
+    }
+
+  }
+
+  /* fade-scale */
+  &-scale {
+    &-leave-active,
+    &-enter-active {
+      transition: all 0.28s;
+    }
+
+    &-enter-from {
+      opacity: 0;
+      transform: scale(1.2);
+    }
+
+    &-leave-to {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+
+  }
+
+  /* fade-top */
+  &-top {
+    &-enter-active,
+    &-leave-active {
+      transition: opacity 0.2s, transform 0.25s;
+    }
+
+    &-enter-from {
+      opacity: 0;
+      transform: translateY(8%);
+    }
+
+    &-leave-to {
+      opacity: 0;
+      transform: translateY(-8%);
+    }
+
+  }
+}

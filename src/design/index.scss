@@ -1,0 +1,250 @@
+/**
+======================
+CSS DOM命名规范
+常规级联：用 - (中横线)逐级命名，末级为 __ (双下划线)，二级以内的级联，考虑会有重复，需要加顶级父类区分
+🎈🎈例：
+A .parent-child-child__title
+👎不建议
+B .parent__title
+👍建议
+B .parent .parent__title
+级联追随：用 -- (双中横线)命名
+🎈🎈例：
+A .parent.parent--full .parent-child
+B .parent-child.parent-child--full .parent-child-child__title
+末级追随：用 is-xx (xx为表意)
+🎈🎈例：
+A .parent-child-child__title.is-bold
+B .parent-child-child__title.is-hot
+级联过深：三级以上的常规级联，用中横线首字母命名加下划线命名，此命名考虑到会有重复，需要加顶级父类区分
+🎈🎈例：
+👎不建议
+A .parent-child-child-child__title
+B .parent-cat-cat-cat__title
+👍建议
+A .parent-child .pcc__title
+B .parent-cat .pcc__title
+======================
+CSS DOM naming convention
+Conventional cascading: use - (the dash) to name it level by level, the last level is __ (double underscore), the cascade within the second level, considering that there will be duplication, you need to add the top-level parent class to distinguish
+🎈🎈example:
+A.parent-child-child__title
+👎Not recommended
+B.parent__title
+👍Recommend
+B.parent.parent__title
+Cascade Follow: Named with -- (double dash)
+🎈🎈example:
+A.parent.parent--full.parent-child
+B.parent-child.parent-child--full.parent-child-child__title
+The last level to follow: use is-xx (xx is the meaning of expression)
+🎈🎈example:
+A.parent-child-child__title.is-bold
+B.parent-child-child__title.is-hot
+The cascade is too deep: the conventional cascade above three levels is named with the first letter of the horizontal line and the underscore. This naming takes into account the repetition and needs to be distinguished by the top-level parent class
+🎈🎈example:
+👎Not recommended
+A.parent-child-child-child__title
+B.parent-cat-cat-cat__title
+👍Recommend
+A.parent-child.pcc__title
+B.parent-cat.pcc__title
+======================
+*/
+
+// Basic
+@use 'var/color.scss' as co;
+
+// Element Plus
+@import 'ele/index.scss';
+
+// Advanced
+@import 'basic.scss';
+@import 'transition/index.scss';
+@import 'public.scss';
+
+@font-face {
+  font-family: 'Urial';
+  font-style: normal;
+  font-weight: normal;
+  src: url('@/assets/fonts/URIAL.woff') format('woff'), url('@/assets/fonts/URIAL.woff2') format('woff2'), url('@/assets/fonts/URIAL.ttf') format('truetype');
+  text-rendering: optimizelegibility;
+}
+
+/* Variables */
+:root {
+  /* === Modules === */
+
+  /* Common */
+  --container-gutter-base: 24px;
+  --container-gutter-small: 16px;
+  --container-gutter-large: 32px;
+
+  /* Logo */
+  --logo-size: 48px;
+
+  /* === Attributes === */
+
+  /* Transitions */
+  --t-base: 0.15s ease;
+  --t-fast: 0.15s;
+  --t-slow: 0.35s;
+  --t-smooth: cubic-bezier(0.215, 0.61, 0.355, 1);
+  --t-elastic: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+  /* Fonts */
+  --font-size-base: 16px;
+  --font-family-base: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  --font-family-logo: 'Urial', sans-serif;
+
+  /* Radius */
+  --radius-base: 6px;
+  --radius-small: 4px;
+  --radius-large: 12px;
+
+  /* ZIndex */
+  --top-zindex: #{$top-zindex};
+  --popup-zindex: #{$popup-zindex};
+  --mask-zindex: #{$mask-zindex};
+  --sec-popup-zindex: #{$sec-popup-zindex};
+  --sec-mask-zindex: #{$sec-mask-zindex};
+
+  @media only screen and (width <= 767px) {
+    // xs
+  }
+  @media only screen and (width >= 768px) {
+    // sm
+  }
+  @media only screen and (width >= 992px) {
+    // md
+  }
+  @media only screen and (width >= 1200px) {
+    // lg
+  }
+  @media only screen and (width >= 1920px) {
+    // xl
+  }
+
+  /* Color */
+  --primary-color: #{co.$primary-color}; /* dead color */
+  --primary-hover-color: #{co.$primary-hover-color}; /* dead color */
+  --primary-active-color: #{co.$primary-active-color}; /* dead color */
+  --active-color: #{co.$primary-active-color}; /* dead color */
+  --primary-bg-color: #{co.$primary-bg-color}; /* dead color */
+  --success-color: #{co.$success-color}; /* dead color */
+  --success-bg-color: #{co.$success-bg-color}; /* dead color */
+  --warning-color: #{co.$warning-color}; /* dead color */
+  --warning-bg-color: #{co.$warning-bg-color}; /* dead color */
+  --danger-color: #{co.$danger-color}; /* dead color */
+  --danger-bg-color: #{co.$danger-bg-color}; /* dead color */
+  --error-color: #{co.$error-color}; /* dead color */
+  --error-bg-color: #{co.$error-bg-color}; /* dead color */
+  --black-color: #{co.$black-color}; /* dead color */
+  --white-color: #{co.$white-color}; /* dead color */
+  --disabled-color: #{co.$disabled-color};
+  --border-color: #{co.$border-color};
+  --border-color-light: #{co.$border-color-light};
+
+  /* Text Color */
+  --text-main-color: #{co.$text-main};
+  --text-primary-color: #{co.$text-primary};
+  --text-primary-reverse: #{co.$white-color};
+  --text-regular-color: #{co.$text-regular};
+  --text-secondary-color: #{co.$text-secondary};
+
+  /* Background Color */
+  --background-main-color: #{co.$background-main};
+  --background-primary-color: #{co.$background-primary};
+  --background-regular-color: #{co.$background-regular};
+  --background-secondary-color: #{co.$background-secondary};
+
+  /* Shadow */
+  --card-shadow: 0 2px 4px rgba(169, 194, 209, 0.05), 0 12px 16px rgba(169, 194, 209, 0.1);
+  --card-shadow-shape: 0 32px 32px rgba(169, 194, 209, 0.1), 0 8px 16px rgba(169, 194, 209, 0.05);
+
+  /* Mix Theme Color */
+  @include co.MixElPrimaryThemeColor();
+}
+
+html {
+  width: 100%;
+  height: 100%;
+  font-family: sans-serif;
+  font-size: var(--font-size-base);
+  line-height: 1.45;
+  color: var(--text-main-color);
+  text-size-adjust: 100%;
+  background: var(--background-main-color);
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-overflow-scrolling: touch;
+
+  &.gray-mode {
+    filter: grayscale(100%);
+  }
+
+  &.weak-mode {
+    /* stylelint-disable-next-line scss/no-global-function-names */
+    filter: invert(80%);
+  }
+
+  /* Dark mode */
+  &.dark {
+    /* Color */
+    --disabled-color: var(--el-text-color-disabled);
+    --border-color: var(--el-border-color);
+    --border-color-light: var(--el-border-color-light);
+
+    /* Text Color */
+    --text-main-color: var(--el-text-color-primary);
+    --text-primary-color: var(--el-text-color-primary);
+    --text-primary-reverse: var(--el-bg-color);
+    --text-regular-color: var(--el-text-color-regular);
+    --text-secondary-color: var(--el-text-color-secondary);
+
+    /* Background Color */
+    --background-main-color: #15232e;
+    --background-primary-color: #1f2935;
+    --background-regular-color: #283444;
+    --background-secondary-color: #434d59;
+
+    /* Shadow */
+    --card-shadow: 0 2px 4px rgba(16, 19, 20, 0.05), 0 12px 16px rgba(16, 19, 20, 0.1);
+    --card-shadow-shape: 0 32px 32px rgba(16, 19, 20, 0.1), 0 8px 16px rgba(16, 19, 20, 0.05);
+
+    // ↓↓↓ Dark Exclusive ↓↓↓
+
+    // left sider
+    // --sider-background-color: var(--el-bg-color) !important;
+    // --sider-background-hover-color: var(--el-bg-color-overlay) !important;
+    // --sider-text-color: var(--el-text-color-primary) !important;
+    // --sider-text-hover-color: var(--el-text-color-regular) !important;
+
+    // top header
+    // --header-text-color: var(--el-text-color-primary) !important;
+    // --header-text-hover-color: var(--el-text-color-regular) !important;
+    // --header-background-color: var(--el-bg-color) !important;
+    // --header-background-hover-color: var(--el-bg-color-overlay) !important;
+
+    // ↑↑↑ Dark Exclusive ↑↑↑
+  }
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  font-family: var(--font-family-base);
+  font-size: inherit;
+  font-weight: 500;
+  font-feature-settings: normal;
+  font-variant: normal;
+  line-height: 1.45;
+  color: inherit;
+  background: var(--background-main-color);
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+}

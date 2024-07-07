@@ -1,0 +1,31 @@
+@use '../var/color.scss' as c;
+
+@forward 'element-plus/theme-chalk/src/common/var.scss' with (
+  $colors: (
+    'primary': (
+      'base': c.$primary-color,
+    ),
+    'success': (
+      'base': c.$success-color,
+    ),
+    'warning': (
+      'base': c.$warning-color,
+    ),
+    'danger': (
+      'base': c.$error-color,
+    ),
+    'error': (
+      'base': c.$danger-color,
+    ),
+    'info': (
+      'base': c.$info-color,
+    ),
+  ),
+  $text-color: (
+    'primary': c.$text-primary,
+    'regular': c.$text-regular,
+    'secondary': c.$text-secondary,
+    'placeholder': c.$text-placeholder,
+    'disabled': c.$text-disabled,
+  ),
+);

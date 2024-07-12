@@ -10,7 +10,7 @@
  "content_scripts": [
    {
      "matches": ["<all_urls>"],
-     "js": ["assets/index-DTiBvJQu.js"]
+     "js": ["assets/index-DY_kFP-1.js"]
    }
  ],
 "icons": {"48": "icons/icon48.png",

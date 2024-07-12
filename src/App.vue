@@ -2,19 +2,19 @@
   <div class="app">
     <div class="toolbar">
       <button @click="openCurrentTab" class="toolbar-btn">
-        <img src="@/assets/icons/current-tab.svg" alt="Open Current Tab" class="toolbar-icon">
+        <img src="@/icons/fullscreen_exit.svg" alt="Open Current Tab" class="toolbar-icon">
         Open Current Tab
       </button>
       <button @click="openBookmark" class="toolbar-btn">
-        <img src="@/assets/icons/bookmark.svg" alt="Open Bookmark" class="toolbar-icon">
+        <img src="@/icons/bookmark_border.svg" alt="Open Bookmark" class="toolbar-icon">
         Open Bookmark
       </button>
       <button @click="openCustomPage" class="toolbar-btn">
-        <img src="@/assets/icons/custom-page.svg" alt="Open Custom Page" class="toolbar-icon">
+        <img src="@/icons/sort.svg" alt="Open Custom Page" class="toolbar-icon">
         Open Custom Page
       </button>
       <button @click="showMenu = !showMenu" class="toolbar-btn">
-        <img src="@/assets/icons/menu.svg" alt="Menu" class="toolbar-icon">
+        <img src="@/icons/menu.svg" alt="Menu" class="toolbar-icon">
         Menu
       </button>
     </div>
@@ -23,11 +23,11 @@
     </div>
     <div class="menu" v-if="showMenu">
       <button @click="addPage" class="menu-btn">
-        <img src="@/assets/icons/add-page.svg" alt="Add Page" class="menu-icon">
+        <img src="@/icons/add.svg" alt="Add Page" class="menu-icon">
         Add Page
       </button>
       <button @click="openSettings" class="menu-btn">
-        <img src="@/assets/icons/settings.svg" alt="Settings" class="menu-icon">
+        <img src="@/icons/settings.svg" alt="Settings" class="menu-icon">
         Settings
       </button>
     </div>

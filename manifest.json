@@ -3,9 +3,6 @@
   "name": "小浏览器",
   "version": "1.0",
   "description": "弹出弹窗或者显示侧栏，在里面显示一个浏览器，有一排访问网页的按钮，可以从书签里添加，基于chrome-extensions-samples-main修改，使用MIT许可开源",
-"background": {
-    "service_worker": "assets/index-BsagB_MT.js"
-  },
   "action": {
     "default_popup": "index.html",
     "default_icon": "icons/icon.png"
@@ -13,13 +10,14 @@
  "content_scripts": [
    {
      "matches": ["<all_urls>"],
-     "js": ["assets/index-BsagB_MT.js"]
+     "js": ["assets/index-DTiBvJQu.js"]
    }
  ],
 "icons": {"48": "icons/icon48.png",
           "128": "icons/icon192.png" },
   "permissions": [
       "tabs",
+    "bookmarks",
 "storage",
 "activeTab"
   ]

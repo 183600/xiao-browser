@@ -1,44 +1,140 @@
-<template>  
-  <div class="popup-container">  
-    <div class="toolbar">  
-      <toolbar />  
-    </div>  
-    <div class="iframe-container">  
-      <iframe-container />  
-    </div>  
-  </div>  
-</template>  
+<template>
+  <div class="app">
+    <div class="toolbar">
+      <button @click="openCurrentTab" class="toolbar-btn">
+        <img src="@/assets/icons/current-tab.svg" alt="Open Current Tab" class="toolbar-icon">
+        Open Current Tab
+      </button>
+      <button @click="openBookmark" class="toolbar-btn">
+        <img src="@/assets/icons/bookmark.svg" alt="Open Bookmark" class="toolbar-icon">
+        Open Bookmark
+      </button>
+      <button @click="openCustomPage" class="toolbar-btn">
+        <img src="@/assets/icons/custom-page.svg" alt="Open Custom Page" class="toolbar-icon">
+        Open Custom Page
+      </button>
+      <button @click="showMenu = !showMenu" class="toolbar-btn">
+        <img src="@/assets/icons/menu.svg" alt="Menu" class="toolbar-icon">
+        Menu
+      </button>
+    </div>
+    <div class="mini-browser">
+      <iframe :src="currentUrl" frameborder="0"></iframe>
+    </div>
+    <div class="menu" v-if="showMenu">
+      <button @click="addPage" class="menu-btn">
+        <img src="@/assets/icons/add-page.svg" alt="Add Page" class="menu-icon">
+        Add Page
+      </button>
+      <button @click="openSettings" class="menu-btn">
+        <img src="@/assets/icons/settings.svg" alt="Settings" class="menu-icon">
+        Settings
+      </button>
+    </div>
+  </div>
+</template>
 
-<script>  
-import Toolbar from './components/Toolbar.vue';  
-import IframeContainer from './components/IframeContainer.vue';  
+<script>
+import { ref } from 'vue'
 
-export default {  
-  components: {  
-    Toolbar,  
-    IframeContainer  
-  }  
-}  
-</script>  
+export default {
+  name: 'App',
+  setup() {
+    const currentUrl = ref('')
+    const showMenu = ref(false)
 
-<style scoped>  
-.popup-container {  
-  display: flex;  
-  flex-direction: column;  
-  height: 100%;  
-}  
-.toolbar {  
-  /* 工具栏样式 */  
-}  
-.iframe-container {  
-  flex: 1;  
-  border: none;  
-  overflow: hidden;  
-  position: relative;  
-}  
-.iframe-container iframe {  
-  width: 100%;  
-  height: 100%;  
-  border: none;  
-}  
+    const openCurrentTab = () => {
+      // Code to open the current tab
+    }
+
+    const openBookmark = () => {
+      // Code to open a bookmark
+    }
+
+    const openCustomPage = () => {
+      // Code to open a custom page
+    }
+
+    const addPage = () => {
+      // Code to add a new page
+    }
+
+    const openSettings = () => {
+      // Code to open the settings
+    }
+
+    return {
+      currentUrl,
+      showMenu,
+      openCurrentTab,
+      openBookmark,
+      openCustomPage,
+      addPage,
+      openSettings
+    }
+  }
+}
+</script>
+
+<style>
+.app {
+  display: flex;
+  flex-direction: column;
+  width: 800px;
+  height: 600px;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  background-color: #f1f1f1;
+}
+
+.toolbar-btn {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.toolbar-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+
+.mini-browser {
+  flex: 1;
+  overflow: hidden;
+}
+
+.mini-browser iframe {
+  width: 100%;
+  height: 100%;
+}
+
+.menu {
+  position: absolute;
+  background-color: #f1f1f1;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.menu-btn {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.menu-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
 </style>

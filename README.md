@@ -9,7 +9,7 @@ Copyright 2024 183600
 - Q群970971601
 - 官网[小浏览器官网](https://minibrowser7.wordpress.com/)
 - 没有图片，这个图片是别的图片
-- pnpm build完之后执行cp -r src/icons/ dist/icons/|cp manifest.json dist/manifest.json这个命令，有时候需要修改manifest.json里的content_scripts的js的路径
+- pnpm build完之后执行cp -r src/icons/ dist/icons/|cp manifest.json dist/manifest.json这个命令
 ![没有图片，这个图片是别的图片](a.jpeg)
 ![QQ群](qq.jpeg)
 ![云湖群](yhchat.jpeg)

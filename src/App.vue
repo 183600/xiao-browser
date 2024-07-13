@@ -3,20 +3,21 @@
     <div class="toolbar">
       <button @click="openCurrentTab" class="toolbar-btn">
         <img src="@/icons/fullscreen_exit.svg" alt="Open Current Tab" class="toolbar-icon">
-        Open Current Tab
       </button>
       <button @click="openBookmark" class="toolbar-btn">
         <img src="@/icons/bookmark_border.svg" alt="Open Bookmark" class="toolbar-icon">
-        Open Bookmark
       </button>
-      <button @click="openCustomPage" class="toolbar-btn">
+      <button @click="openCustomPage" class="custom-page-btn">
         <img src="@/icons/sort.svg" alt="Open Custom Page" class="toolbar-icon">
-        Open Custom Page
       </button>
       <button @click="showMenu = !showMenu" class="toolbar-btn">
         <img src="@/icons/menu.svg" alt="Menu" class="toolbar-icon">
-        Menu
       </button>
+          <div class="menu-button-container">
+      <div class="menu-button" onclick="showMenu()">
+        <img src="@/icons/menu.svg" alt="Menu" class="toolbar-icon">
+      </div>
+    </div>
     </div>
     <div class="mini-browser">
       <iframe :src="currentUrl" frameborder="0"></iframe>
@@ -79,31 +80,58 @@ export default {
 <style>
 .app {
   display: flex;
-  flex-direction: column;
-  width: 800px;
-  height: 600px;
+  width: 700px;
+  height: 450px;
 }
 
 .toolbar {
   display: flex;
-  justify-content: space-around;
-  padding: 10px;
-  background-color: #f1f1f1;
+  flex-direction: column;
+  padding: 2px;
+  background-color: transparent;
+}
+
+.menu-button-container {
+  margin-left: auto;
+  display: flex;
+  align-items: flex-end;
+    bottom: 0;
+  left: 0;
+  right: 0;
+    position: absolute;
 }
 
 .toolbar-btn {
   display: flex;
+  justify-content: center;
   align-items: center;
-  background-color: transparent;
+  background-color: #ebebeb;
   border: none;
   cursor: pointer;
-  font-size: 14px;
+  margin-top: 5px;
+  width: 50px;
+  margin-bottom: 5px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.custom-page-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ebebeb;
+  border: none;
+  margin-top: 5px;
+  cursor: pointer;
+  margin-bottom: 5px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
 }
 
 .toolbar-icon {
   width: 20px;
   height: 20px;
-  margin-right: 5px;
 }
 
 .mini-browser {

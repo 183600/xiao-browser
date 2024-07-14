@@ -95,11 +95,21 @@ export default {
   margin-left: auto;
   display: flex;
   align-items: flex-end;
-    bottom: 0;
+  bottom: 0;
   left: 0;
   right: 0;
-    position: absolute;
+  position: absolute;
 }
+
+.menu-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f1f1f1;
+  border: none;
+  cursor: pointer;
+}
+
 
 .toolbar-btn {
   display: flex;

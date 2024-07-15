@@ -1,7 +1,17 @@
 <template>
   <div class="app">
 <head>
-<meta http-equiv="Content-Security-Policy" content="frame-ancestors *">
+     <base href="${resourceRoot}">
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browser</title>
+    <link rel="stylesheet" type="text/css" href="index.css" />
+    <script>
+    window.proxyUrl = '${proxyUrl}';
+    </script>
+    <script src="awesomplete.min.js"></script>
+    <link rel="stylesheet" href="awesomplete.min.css" /> 
 </head>
     <div class="toolbar">
       <!-- <button @click="showMenu = !showMenu" class="toolbar-btn">
@@ -22,9 +32,7 @@
     </div>
     </div>
     <template>
-  <div>
-    <iframe ref="iframe" src="http://localhost:10101/api/some-path" frameborder="0"></iframe>
-  </div>
+            <iframe id="iframe" frameborder="no" border="0" marginwidth="0" marginheight="0" allowtransparency="yes"></iframe>
 </template>
     <div class="menu" v-if="showMenu">
       <button @click="addPage" class="menu-btn">
@@ -37,6 +45,7 @@
       </button>
     </div>
   </div>
+      <script src="src/index.js"></script>
 </template>
 
 <script>

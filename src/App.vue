@@ -1,27 +1,31 @@
 <template>
   <div class="app">
+<head>
+<meta http-equiv="Content-Security-Policy" content="frame-ancestors *">
+</head>
     <div class="toolbar">
-      <button @click="openCurrentTab" class="toolbar-btn">
-        <img src="@/icons/fullscreen_exit.svg" alt="Open Current Tab" class="toolbar-icon">
-      </button>
-      <button @click="openBookmark" class="toolbar-btn">
-        <img src="@/icons/bookmark_border.svg" alt="Open Bookmark" class="toolbar-icon">
-      </button>
-      <button @click="openCustomPage" class="custom-page-btn">
-        <img src="@/icons/sort.svg" alt="Open Custom Page" class="toolbar-icon">
-      </button>
-      <button @click="showMenu = !showMenu" class="toolbar-btn">
+      <!-- <button @click="showMenu = !showMenu" class="toolbar-btn">
         <img src="@/icons/menu.svg" alt="Menu" class="toolbar-icon">
-      </button>
+      </button> -->
+      <div class="menu-button" @click="openBookmark">
+        <img src="@/icons/bookmark_border.svg" alt="Menu" class="toolbar-icon">
+      </div>
+      <div class="menu-button" @click="openCustomPage">
+        <img src="@/icons/sort.svg" alt="Menu" class="toolbar-icon">
+      </div>
           <div class="menu-button-container">
-      <div class="menu-button" onclick="showMenu()">
+          <div class="menu-button-container2">
+      <div class="menu-button" @click="showMenu = !showMenu">
         <img src="@/icons/menu.svg" alt="Menu" class="toolbar-icon">
+      </div>
       </div>
     </div>
     </div>
-    <div class="mini-browser">
-      <iframe :src="currentUrl" frameborder="0"></iframe>
-    </div>
+    <template>
+  <div>
+    <iframe ref="iframe" src="http://localhost:10101/api/some-path" frameborder="0"></iframe>
+  </div>
+</template>
     <div class="menu" v-if="showMenu">
       <button @click="addPage" class="menu-btn">
         <img src="@/icons/add.svg" alt="Add Page" class="menu-icon">
@@ -73,8 +77,26 @@ export default {
       addPage,
       openSettings
     }
+  },
+   data() {
+    return {
+      proxyUrl: `https://zhuanlan.zhihu.com/p/689524098`
+    };
+  },
+    mounted() {
+    this.iframe = this.$refs.iframe;
+    this.iframeContentWindow = this.iframe.contentWindow;
+    this.iframeContentWindow.addEventListener('beforeload', this.beforeLoad);
+  },
+  methods: {
+    beforeLoad(event) {
+      event.preventDefault();
+      const url = event.target.src;
+      const proxyUrl = 'http://localhost:10101/api' + url.substring(url.indexOf('/api'));
+      event.target.src = proxyUrl;
+    },
+  },
   }
-}
 </script>
 
 <style>
@@ -87,27 +109,34 @@ export default {
 .toolbar {
   display: flex;
   flex-direction: column;
-  padding: 2px;
   background-color: transparent;
 }
 
 .menu-button-container {
-  margin-left: auto;
   display: flex;
-  align-items: flex-end;
+  align-items: flex-left;
+  justify-content: center;
+}
+
+.menu-button-container2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   bottom: 0;
-  left: 0;
-  right: 0;
   position: absolute;
+  width: 70px;
+  height: 70px;
 }
 
 .menu-button {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #f1f1f1;
+  background-color: transparent;
   border: none;
   cursor: pointer;
+  width: 70px;
+  height: 70px;
 }
 
 

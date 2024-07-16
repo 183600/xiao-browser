@@ -20,6 +20,9 @@ importers:
       vue:
         specifier: ^3.4.29
         version: 3.4.31
+      vue-iframe:
+        specifier: ^0.0.0
+        version: 0.0.0
     devDependencies:
       '@vitejs/plugin-vue':
         specifier: ^5.0.5
@@ -1264,6 +1267,9 @@ packages:
         optional: true
       terser:
         optional: true
+
+  vue-iframe@0.0.0:
+    resolution: {integrity: sha512-gH791EBUqJrsa5SuGhxeujyK4NFngJnuvpSJN0p5W5VoHmYkW35ZekOLlCZTN658VsXUYNGCPHlk9bzLtRyd7Q==}
 
   vue@3.4.31:
     resolution: {integrity: sha512-njqRrOy7W3YLAlVqSKpBebtZpDVg21FPoaq1I7f/+qqBThK9ChAIjkRWgeP6Eat+8C+iia4P3OYqpATP21BCoQ==}
@@ -2637,6 +2643,8 @@ snapshots:
       '@types/node': 20.14.10
       fsevents: 2.3.3
       terser: 5.31.2
+
+  vue-iframe@0.0.0: {}
 
   vue@3.4.31:
     dependencies:

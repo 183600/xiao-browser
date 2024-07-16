@@ -12,7 +12,8 @@
     "http-proxy-middleware": "^3.0.0",
     "https": "^1.0.0",
     "querystring": "^0.2.1",
-    "vue": "^3.4.29"
+    "vue": "^3.4.29",
+    "vue-iframe": "^0.0.0"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.5",

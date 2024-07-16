@@ -1,18 +1,5 @@
 <template>
   <div class="app">
-<head>
-     <base href="${resourceRoot}">
-    <meta charset="UTF-8">
-    <meta http-equiv="Content-Security-Policy" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Browser</title>
-    <link rel="stylesheet" type="text/css" href="index.css" />
-    <script>
-    window.proxyUrl = '${proxyUrl}';
-    </script>
-    <script src="awesomplete.min.js"></script>
-    <link rel="stylesheet" href="awesomplete.min.css" /> 
-</head>
     <div class="toolbar">
       <!-- <button @click="showMenu = !showMenu" class="toolbar-btn">
         <img src="@/icons/menu.svg" alt="Menu" class="toolbar-icon">
@@ -31,9 +18,7 @@
       </div>
     </div>
     </div>
-    <template>
-            <iframe id="iframe" frameborder="no" border="0" marginwidth="0" marginheight="0" allowtransparency="yes"></iframe>
-</template>
+    <iframe url=proxyUrl2 />
     <div class="menu" v-if="showMenu">
       <button @click="addPage" class="menu-btn">
         <img src="@/icons/add.svg" alt="Add Page" class="menu-icon">
@@ -45,7 +30,6 @@
       </button>
     </div>
   </div>
-      <script src="src/index.js"></script>
 </template>
 
 <script>
@@ -89,21 +73,8 @@ export default {
   },
    data() {
     return {
-      proxyUrl: `https://zhuanlan.zhihu.com/p/689524098`
+      proxyUrl2: proxyUrl('https://www.baidu.com/s?ie=utf-8&f=3&rsv_bp=1&tn=baidu&wd=vue%E5%B5%8C%E5%85%A5%E7%AC%AC%E4%B8%89%E6%96%B9%E9%A1%B5%E9%9D%A2&oq=vue%2520%25E4%25BB%25A3%25E7%2590%2586&rsv_pq=c98d7376011230f3&rsv_t=4a71p2mmzF6YTForxdKo5ML2wnN6mYKqGJWeu%2FvOATviQ%2FWpN3vpdmr3%2FtI&rqlang=cn&rsv_dl=ts_0&rsv_enter=1&rsv_btype=t&inputT=11309&rsv_sug3=24&rsv_sug1=19&rsv_sug7=100&rsv_sug2=1&prefixsug=vue%2520%25E5%2586%2585%25E5%25B5%258C%25E7%25AC%25AC%25E4%25B8%2589%25E6%2596%25B9&rsp=0&rsv_sug4=12336')
     };
-  },
-    mounted() {
-    this.iframe = this.$refs.iframe;
-    this.iframeContentWindow = this.iframe.contentWindow;
-    this.iframeContentWindow.addEventListener('beforeload', this.beforeLoad);
-  },
-  methods: {
-    beforeLoad(event) {
-      event.preventDefault();
-      const url = event.target.src;
-      const proxyUrl = 'http://localhost:10101/api' + url.substring(url.indexOf('/api'));
-      event.target.src = proxyUrl;
-    },
   },
   }
 </script>

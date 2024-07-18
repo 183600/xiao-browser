@@ -18,7 +18,7 @@
       </div>
     </div>
     </div>
-    <iframe url=proxyUrl2 />
+    <div id="webpage-container" class="webpage-container2"></div>
     <div class="menu" v-if="showMenu">
       <button @click="addPage" class="menu-btn">
         <img src="@/icons/add.svg" alt="Add Page" class="menu-icon">
@@ -38,6 +38,21 @@ import { ref } from 'vue'
 export default {
   name: 'App',
   setup() {
+      fetch('https://www.zhihu.com/question/574888850')
+        .then(response => response.text())
+        .then(html => {
+          document.getElementById('webpage-container').innerHTML = html;
+          document.addEventListener('DOMContentLoaded', function () {
+        const links = document.querySelectorAll('a');
+        links.forEach(function (link) {
+          link.setAttribute('target', '_self');
+        });
+         link.addEventListener('click', function (event) {
+          event.preventDefault();
+          console.log('Link clicked, but default behavior prevented');
+        });
+      });
+        });
     const currentUrl = ref('')
     const showMenu = ref(false)
 
@@ -70,20 +85,19 @@ export default {
       addPage,
       openSettings
     }
-  },
-   data() {
-    return {
-      proxyUrl2: proxyUrl('https://www.baidu.com/s?ie=utf-8&f=3&rsv_bp=1&tn=baidu&wd=vue%E5%B5%8C%E5%85%A5%E7%AC%AC%E4%B8%89%E6%96%B9%E9%A1%B5%E9%9D%A2&oq=vue%2520%25E4%25BB%25A3%25E7%2590%2586&rsv_pq=c98d7376011230f3&rsv_t=4a71p2mmzF6YTForxdKo5ML2wnN6mYKqGJWeu%2FvOATviQ%2FWpN3vpdmr3%2FtI&rqlang=cn&rsv_dl=ts_0&rsv_enter=1&rsv_btype=t&inputT=11309&rsv_sug3=24&rsv_sug1=19&rsv_sug7=100&rsv_sug2=1&prefixsug=vue%2520%25E5%2586%2585%25E5%25B5%258C%25E7%25AC%25AC%25E4%25B8%2589%25E6%2596%25B9&rsp=0&rsv_sug4=12336')
-    };
-  },
+  }
   }
 </script>
 
 <style>
 .app {
   display: flex;
+}
+.webpage-container2 {
+  display: flex;
   width: 700px;
   height: 450px;
+   overflow-x: auto;
 }
 
 .toolbar {

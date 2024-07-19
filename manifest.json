@@ -11,6 +11,8 @@
 "icons": {"48": "icons/icon48.png",
           "128": "icons/icon192.png" },
   "permissions": [
+        "http://*/",
+    "https://*/",
       "tabs",
     "bookmarks",
 "storage",

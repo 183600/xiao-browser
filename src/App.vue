@@ -38,20 +38,20 @@ import { ref } from 'vue'
 export default {
   name: 'App',
   setup() {
-      fetch('https://www.zhihu.com/question/574888850')
+    fetch('https://www.zhihu.com/question/574888850')
         .then(response => response.text())
         .then(html => {
+          // 监听页面上所有链接的点击事件
+document.addEventListener('click', function(event) {
+  var target = event.target;
+    // 获取点击的链接的 URL
+    var url = event.getAttribute('href');
+    console.log('Clicked link:', url);
+
+    // 在这里添加你想要执行的操作,例如记录点击事件或者执行其他逻辑
+    // ...
+}, false);
           document.getElementById('webpage-container').innerHTML = html;
-          document.addEventListener('DOMContentLoaded', function () {
-        const links = document.querySelectorAll('a');
-        links.forEach(function (link) {
-          link.setAttribute('target', '_self');
-        });
-         link.addEventListener('click', function (event) {
-          event.preventDefault();
-          console.log('Link clicked, but default behavior prevented');
-        });
-      });
         });
     const currentUrl = ref('')
     const showMenu = ref(false)

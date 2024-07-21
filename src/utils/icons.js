@@ -1,1 +1,0 @@
-export { default as CurrentTab } from './icons/current-tab.'

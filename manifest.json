@@ -1,22 +1,76 @@
 {
-  "manifest_version": 3,
-  "name": "小浏览器",
-  "version": "1.0",
-  "description": "弹出弹窗或者显示侧栏，在里面显示一个浏览器，有一排访问网页的按钮，可以从书签里添加，基于chrome-extensions-samples-main修改，使用MIT许可开源",
-  "action": {
-    "default_popup": "index.html",
-    "default_icon": "icons/icon.png"
-  },
-    "host_permissions": [ "<all_urls>" ],
-"icons": {"48": "icons/icon48.png",
-          "128": "icons/icon192.png" },
-  "permissions": [
-        "http://*/",
-    "https://*/",
-      "tabs",
-    "bookmarks",
-"storage",
-"activeTab"
-  ]
-}
+"update_url": "https://clients2.google.com/service/update2/crx",
 
+	"manifest_version": 3,
+	"short_name": "__MSG_name__",
+	"homepage_url": "https://www.stefanvd.net/support/",
+	"description": "__MSG_description__",
+	"author": "Stefan vd",
+	"version": "1.1.2",
+	"icons": {
+		"16": "images/icon16.png",
+		"24": "images/icon24.png",
+		"32": "images/icon32.png",
+		"48": "images/icon48.png",
+		"96": "images/icon96.png",
+		"128": "images/icon128.png"
+	},
+	"default_locale": "en",
+	"content_scripts": [
+		{
+			"all_frames": true,
+			"js": [
+				"/scripts/communicate.js"
+			],
+			"match_about_blank": true,
+			"matches": [
+				"*://*/*"
+			],
+			"run_at": "document_start"
+		}
+	],
+	"options_ui": {
+		"page": "options.html",
+		"open_in_tab": true
+	},
+	"name": "__MSG_namefull__",
+	"background": {
+		"service_worker": "scripts/background.js"
+	},
+	"action": {
+    "default_popup": "panel.html",
+		"default_title": "__MSG_name__"
+	},
+	"side_panel": {
+		"default_path": "panel.html"
+	},
+	"commands": {
+		"_execute_action": {
+			"suggested_key": {
+				"default": "Ctrl+Shift+P",
+				"mac": "MacCtrl+Shift+P"
+			}
+		},
+		"toggle-feature-openweb": {
+			"suggested_key": {
+				"default": "Ctrl+Shift+N",
+				"mac": "MacCtrl+Shift+N"
+			},
+			"description": "__MSG_titelcurrenttab__"
+		}
+	},
+	"offline_enabled": true,
+	"minimum_chrome_version": "114",
+	"host_permissions": [
+		"<all_urls>"
+	],
+	"permissions": [
+		"contextMenus",
+		"storage",
+		"sidePanel",
+		"declarativeNetRequestWithHostAccess"
+	],
+	"optional_permissions": [
+		"bookmarks"
+	]
+}

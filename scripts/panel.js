@@ -1248,7 +1248,7 @@ chrome.runtime.onMessage.addListener(function(request){
                 menu.style.display = 'none';
             }
         }
-    const currentUrl = ref('')
+    const currentUrl = ''
     const showMenu = false
 
     const openCurrentTab = () => {
@@ -1271,17 +1271,9 @@ chrome.runtime.onMessage.addListener(function(request){
       // Code to open the settings
     }
 
-    return {
-      currentUrl,
-      showMenu,
-      openCurrentTab,
-      openBookmark,
-      openCustomPage,
-      addPage,
-      openSettings
-    h
 
 
+		openweb("https://zhuanlan.zhihu.com/p/426034604", true);
 /* TODO
 + check zoom in/out button and first zoom load => TODO
 */

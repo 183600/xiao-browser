@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="utf-8">
-<!--
+    <meta charset="utf-8">
+    <!--
 //================================================
 /*
 
@@ -32,71 +33,15 @@ To view a copy of this license, visit http://creativecommons.org/licenses/GPL/2.
 //================================================
 -->
 
-<title data-i18n="name"></title>
-<link rel="stylesheet" type="text/css" href="styles/panel.css">
-<script type="text/javascript" src="scripts/panel.js"></script>
-<meta name="color-scheme" content="light dark">
-<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#232323" media="(prefers-color-scheme: dark)">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title data-i18n="name"></title>
+    <link rel="stylesheet" type="text/css" href="styles/panel.css">
+    <script type="text/javascript" src="scripts/panel.js"></script>
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#232323" media="(prefers-color-scheme: dark)">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 </head>
-<body>
-      <div class="app2">
-      <div class="app">
-    <div class="toolbar">
-      <!-- <button @click="showMenu = !showMenu" class="toolbar-btn">
-        <img src="@/icons/menu.svg" alt="Menu" class="toolbar-icon">
-      </button> -->
-      <div class="menu-button" @click="openBookmark">
-        <img src="src/icons/bookmark_border.svg" alt="Menu" class="toolbar-icon">
-      </div>
-      <div class="menu-button" @click="openCustomPage">
-        <img src="src/icons/sort.svg" alt="Menu" class="toolbar-icon">
-      </div>
-          <div class="menu-button-container">
-          <div class="menu-button-container2">
-      <div class="menu-button" @click="showMenu = !showMenu">
-        <img src="src/icons/menu.svg" alt="Menu" class="toolbar-icon">
-      </div>
-      </div>
-    </div>
-    </div>
-    <div id="web" class="web">
-        <div id="drag-drop-info" class="show">
-            <img alt="Link" width="128" height="128" src="images/link.png" srcset="images/link.png 1x, images/link@2x.png 2x">
-            <div class="placeholder"><span data-i18n="desdragdrop"></span></div>
-        </div>
-        <div id="drag-drop-zone"></div>
-        <div id="webcontent"></div>
-        <div id="stefanvdpromo" class="hidden">
-            <div class="box">
-                <div class="red"><span data-i18n="stefanvdpromonew"></span></div>
-                <a href="https://www.stefanvd.net/project/browser-extension/?utm_source=notessidebar&utm_medium=referral&utm_campaign=browserextension-promo" target="_blank"><span data-i18n="stefanvdpromotext"></span></a>
-                <div class="close">✕</div>
-            </div>
-        </div>
-    </div>
-<div class="hidden" id="zoombar">
-    <div class="collapse-handle" id="collapse-handle"></div>
-    <button class="zoom-button" id="zoom-in-button"><i class="material-icons">+</i></button>
-    <button class="zoom-button" id="zoom-out-button"><i class="material-icons">-</i></button>
-    <div class="zoom-level" id="zoom-level"></div>
-</div>  
-    <div class="menu" v-if="showMenu">
-      <button @click="addPage" class="menu-btn">
-        <img src="@/icons/add.svg" alt="Add Page" class="menu-icon">
-        Add Page
-      </button>
-      <button @click="openSettings" class="menu-btn">
-        <img src="@/icons/settings.svg" alt="Settings" class="menu-icon">
-        Settings
-      </button>
-    </div>
-  </div>
-  </div>
-<script type="text/javascript" src="scripts/translate.js"></script>
-</body>
-</html>
+
 
 <body>
     <div id="hostbox" class="hidden">
@@ -106,6 +51,24 @@ To view a copy of this license, visit http://creativecommons.org/licenses/GPL/2.
         </div>
     </div>
     <div id="psidebar" class="container">
+            <div class="toolbar">
+                <!-- <button @click="showMenu = !showMenu" class="toolbar-btn">
+        <img src="@/icons/menu.svg" alt="Menu" class="toolbar-icon">
+      </button> -->
+                <div class="menu-button" @click="openBookmark">
+                    <img src="src/icons/bookmark_border.svg" alt="Menu" class="toolbar-icon">
+                </div>
+                <div class="menu-button" @click="openCustomPage">
+                    <img src="src/icons/sort.svg" alt="Menu" class="toolbar-icon">
+                </div>
+                <div class="menu-button-container">
+                    <div class="menu-button-container2">
+                        <div class="menu-button" @click="showMenu = !showMenu">
+                            <img src="src/icons/menu.svg" alt="Menu" class="toolbar-icon">
+                        </div>
+                    </div>
+                </div>
+            </div>
         <div id="web" class="web">
             <div id="drag-drop-info" class="show">
                 <img alt="Link" width="128" height="128" src="images/link.png"
@@ -189,4 +152,41 @@ To view a copy of this license, visit http://creativecommons.org/licenses/GPL/2.
     <script type="text/javascript" src="scripts/translate.js"></script>
 </body>
 
+
+
+
+
+
+
+  <div class="app">
+    <div class="toolbar">
+      <!-- <button @click="showMenu = !showMenu" class="toolbar-btn">
+        <img src="@/icons/menu.svg" alt="Menu" class="toolbar-icon">
+      </button> -->
+      <div class="menu-button" @click="openBookmark">
+        <img src="@/icons/bookmark_border.svg" alt="Menu" class="toolbar-icon">
+      </div>
+      <div class="menu-button" @click="openCustomPage">
+        <img src="@/icons/sort.svg" alt="Menu" class="toolbar-icon">
+      </div>
+      <div class="menu-button-container">
+        <div class="menu-button-container2">
+          <div class="menu-button" @click="showMenu = !showMenu">
+            <img src="@/icons/menu.svg" alt="Menu" class="toolbar-icon">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="webpage-container" class="webpage-container2"></div>
+    <div class="menu" v-if="showMenu">
+      <button @click="addPage" class="menu-btn">
+        <img src="@/icons/add.svg" alt="Add Page" class="menu-icon">
+        Add Page
+      </button>
+      <button @click="openSettings" class="menu-btn">
+        <img src="@/icons/settings.svg" alt="Settings" class="menu-icon">
+        Settings
+      </button>
+    </div>
+  </div>  
 </html>

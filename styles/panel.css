@@ -151,13 +151,14 @@ body {
 iframe {
   border: none;
   width: 100%;
-  height: 100%;
+  height: 446px;
   box-sizing: border-box;
   margin: 0px
 }
 
 #webcontent {
-  height: 100%
+    width: 700px;
+  height: 450px;
 }
 
 #webcontent iframe {
@@ -995,3 +996,6 @@ iframe {
   height: 20px;
   margin-right: 5px;
 }
+  .fujia {
+    display: none;
+  }

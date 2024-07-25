@@ -975,10 +975,10 @@ iframe {
 }
 
 .menu {
-  position: absolute;
+  /* position: absolute;
   background-color: #f1f1f1;
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #ccc; */
   display: none;
 }
 

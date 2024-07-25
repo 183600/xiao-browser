@@ -1256,6 +1256,7 @@ const openCurrentTab = () => {
 }
 
 const openBookmark = () => {
+	console.log("openBookmark");
 	// Code to open a bookmark
 }
 
@@ -1273,16 +1274,17 @@ const openSettings = () => {
 
 
 
+  function showMenu2() {
+	console.log("showMenu2");
+      var menu = document.getElementById("menu");
+      if (menu.style.display === "none") {
+        menu.style.display = "block";
+      } else {
+        menu.style.display = "none";
+      }
+    }
 openweb("https://zhuanlan.zhihu.com/p/426034604", true);
-function showMenu2() {
-	var menu = document.getElementById("menu");
-	console.log(menu.style.display);
-	if (menu.style.display === "none") {
-		menu.style.display = "block";
-	} else {
-		menu.style.display = "none";
-	}
-}
+
 /* TODO
 + check zoom in/out button and first zoom load => TODO
 */

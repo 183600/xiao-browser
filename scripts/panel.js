@@ -375,6 +375,7 @@ function init() {
 		document.getElementById("btnnext").addEventListener("click", actionNextTab, false);
 		document.getElementById("btnreload").addEventListener("click", actionReloadTab, false);
 		document.getElementById("btngo").addEventListener("click", actionGo, false);
+		document.getElementById("menu-button2").addEventListener("click", showMenu2, false);
 		document.getElementById("searchbar").addEventListener("keypress", handleKeyPress, false);
 		document.getElementById("btncopy").addEventListener("click", actionCopyTab, false);
 		document.getElementById("btntab").addEventListener("click", actionOpenTab, false);
@@ -1274,15 +1275,15 @@ const openSettings = () => {
 
 
 
-  function showMenu2() {
+function showMenu2() {
 	console.log("showMenu2");
-      var menu = document.getElementById("menu");
-      if (menu.style.display === "none") {
-        menu.style.display = "block";
-      } else {
-        menu.style.display = "none";
-      }
-    }
+	var menu = document.getElementById("menu");
+	if (menu.style.display === "none") {
+		menu.style.display = "block";
+	} else {
+		menu.style.display = "none";
+	}
+}
 openweb("https://zhuanlan.zhihu.com/p/426034604", true);
 
 /* TODO

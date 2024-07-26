@@ -975,10 +975,14 @@ iframe {
 }
 
 .menu {
-  /* position: absolute;
+  position: absolute;
   background-color: #f1f1f1;
   padding: 10px;
-  border: 1px solid #ccc; */
+  margin: 30px;
+   bottom: 0;
+    left: 0;
+  /* border: 1px solid #ccc; */
+    border-radius: 25px;
   display: none;
 }
 
@@ -987,6 +991,7 @@ iframe {
   align-items: center;
   background-color: transparent;
   border: none;
+      color: #000000;
   cursor: pointer;
   font-size: 14px;
 }

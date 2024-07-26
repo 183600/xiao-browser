@@ -173,16 +173,15 @@ To view a copy of this license, visit http://creativecommons.org/licenses/GPL/2.
             <!-- <div class="menu-button" @click="openCustomPage">
                 <img src="src/icons/sort.svg" alt="Menu" class="toolbar-icon">
             </div> -->
-            <div class="menu-button-container" id="menu-button2" @click="openBookmark">
-                <div class="menu-button-container2">
+            <div class="menu-button-container">
+                <div class="menu-button-container2" id="menu-button2">
                     <div class="menu-button3">
-                         <img src="src/icons/menu.svg" alt="Menu" class="toolbar-icon">
+                        <img src="src/icons/menu.svg" alt="Menu" class="toolbar-icon">
                     </div>
                 </div>
             </div>
-              <script type="text/javascript">
-			document.getElementById("menu-button2").addEventListener("click", showMenu2, false);
-              </script>
+            <script type="text/javascript">
+            </script>
         </div>
         <div id="web" class="web">
             <div id="drag-drop-info" class="show">
@@ -201,14 +200,18 @@ To view a copy of this license, visit http://creativecommons.org/licenses/GPL/2.
                 </div>
             </div>
         </div>
-          <div id="menu" class="menu">
+        <div id="menu" class="menu">
             <button @click="addPage" class="menu-btn">
                 <img src="src/icons/add.svg" alt="Add Page" class="menu-icon">
-                Add Page
+                新建标签页打开
+            </button>
+            <button @click="addPage" class="menu-btn">
+                <img src="src/icons/add.svg" alt="Add Page" class="menu-icon">
+                添加固定在左侧的网页
             </button>
             <button @click="openSettings" class="menu-btn">
                 <img src="src/icons/settings.svg" alt="Settings" class="menu-icon">
-                Settings
+                设置
             </button>
         </div>
     </div>

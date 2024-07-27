@@ -376,6 +376,7 @@ function init() {
 		document.getElementById("btnreload").addEventListener("click", actionReloadTab, false);
 		document.getElementById("btngo").addEventListener("click", actionGo, false);
 		document.getElementById("menu-button2").addEventListener("click", showMenu2, false);
+		document.getElementById("menu-btn2").addEventListener("click", openSettings, false);
 		document.getElementById("searchbar").addEventListener("keypress", handleKeyPress, false);
 		document.getElementById("btncopy").addEventListener("click", actionCopyTab, false);
 		document.getElementById("btntab").addEventListener("click", actionOpenTab, false);
@@ -1257,7 +1258,6 @@ const openCurrentTab = () => {
 }
 
 const openBookmark = () => {
-	console.log("openBookmark");
 	// Code to open a bookmark
 }
 
@@ -1270,9 +1270,10 @@ const addPage = () => {
 }
 
 const openSettings = () => {
+	//   window.location.href = "options.html";
+	  window.location.href = "chrome://bookmarks/";
 	// Code to open the settings
 }
-
 
 
 function showMenu2() {

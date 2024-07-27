@@ -1,11 +1,11 @@
 {
     "name": {"message": "小浏览器"},
-    "namefull": {"message": "小浏览器 | 弹出窗口显示浏览器"},
+    "namefull": {"message": "小浏览器"},
     "namechrome": {"message": "小浏览器 for Google Chrome"},
     "nameedge": {"message": "小浏览器 for Microsoft Edge"},
     "nameopera": {"message": "小浏览器 for Opera"},
     "namefirefox": {"message": "小浏览器 for Firefox"},
-    "description": {"message": "Effortlessly open any website in your web browser's sidebar – streamline your workflow instantly!"},
+    "description": {"message": "弹出弹窗或者显示侧栏，在里面显示一个浏览器，有一排访问网页的按钮，可以从书签里添加，使用GPL许可开源"},
     "optionpagetitle": {"message": "Page Sidebar - Options"},
     "pagehelp": {"message": "help"},
     "pagestillloading": {"message": "The page is still loading?"},

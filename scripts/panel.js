@@ -1271,21 +1271,42 @@ const addPage = () => {
 
 const openSettings = () => {
 	//   window.location.href = "options.html";
-	  window.location.href = "chrome://bookmarks/";
+	//   window.location.href = "chrome://bookmarks/";
 	// Code to open the settings
 }
 
 
 function showMenu2() {
-	console.log("showMenu2");
 	var menu = document.getElementById("menu");
 	if (menu.style.display === "none") {
 		menu.style.display = "block";
 	} else {
 		menu.style.display = "none";
 	}
-}
-openweb("https://zhuanlan.zhihu.com/p/426034604", true);
+	document.addEventListener('DOMContentLoaded', async () => {
+    const bookmarkList = document.getElementById('bookmarkList');
+
+    // 获取所有书签
+    chrome.bookmarks.getTree(function(bookmarks) {
+        let rootNode = bookmarks[0];
+		console.log(rootNode,bookmarks);
+        function traverseBookmarks(node) {
+            if (node.children) {
+                node.children.forEach(child => {
+                    let item = document.createElement('li');
+                    item.textContent = child.title;
+                    bookmarkList.appendChild(item);
+
+                    // 递归遍历子书签
+                    traverseBookmarks(child);
+                });
+            }
+        }
+        traverseBookmarks(rootNode);
+    });
+});
+	}
+// openweb("https://zhuanlan.zhihu.com/p/426034604", true);
 
 /* TODO
 + check zoom in/out button and first zoom load => TODO

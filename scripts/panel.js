@@ -376,6 +376,7 @@ function init() {
 		document.getElementById("btnreload").addEventListener("click", actionReloadTab, false);
 		document.getElementById("btngo").addEventListener("click", actionGo, false);
 		document.getElementById("menu-button2").addEventListener("click", showMenu2, false);
+		document.getElementById("bookmark-button2").addEventListener("click", showBookmark, false);
 		document.getElementById("menu-btn2").addEventListener("click", openSettings, false);
 		document.getElementById("searchbar").addEventListener("keypress", handleKeyPress, false);
 		document.getElementById("btncopy").addEventListener("click", actionCopyTab, false);
@@ -1283,29 +1284,101 @@ function showMenu2() {
 	} else {
 		menu.style.display = "none";
 	}
-	document.addEventListener('DOMContentLoaded', async () => {
-    const bookmarkList = document.getElementById('bookmarkList');
+	var menuBtn = document.getElementById("menu-btn2");
+		menuBtn.style.display = "block";
+	function renderBookmarkMenu(bookmarks) {
+		const container = document.getElementById('bookmark-container');
+		// container.innerHTML = '';
 
-    // 获取所有书签
-    chrome.bookmarks.getTree(function(bookmarks) {
-        let rootNode = bookmarks[0];
-		console.log(rootNode,bookmarks);
-        function traverseBookmarks(node) {
-            if (node.children) {
-                node.children.forEach(child => {
-                    let item = document.createElement('li');
-                    item.textContent = child.title;
-                    bookmarkList.appendChild(item);
+		function createBookmarkItem(bookmark) {
+			const item = document.createElement('div');
+			item.classList.add('bookmark-item');
 
-                    // 递归遍历子书签
-                    traverseBookmarks(child);
-                });
-            }
-        }
-        traverseBookmarks(rootNode);
-    });
-});
+			// const icon = document.createElement('img');
+			// icon.classList.add('bookmark-icon');
+			// console.log(bookmark);
+			// icon.src = bookmark.iconUrl || 'default_icon.png'; // 使用默认图标如果书签没有图标
+			// item.appendChild(icon);
+
+			const title = document.createElement('span');
+			title.textContent = bookmark.title;
+			item.appendChild(title);
+
+			item.addEventListener('click', () => {
+				console.log(bookmark.url);
+			});
+
+			return item;
+		}
+
+		function renderBookmarks(bookmarks, level = 0) {
+			for (const bookmark of bookmarks) {
+				const item = createBookmarkItem(bookmark);
+				container.appendChild(item);
+				if (bookmark.children && bookmark.children.length > 0) {
+					renderBookmarks(bookmark.children, level + 1);
+				}
+			}
+		}
+
+		renderBookmarks(bookmarks);
 	}
+
+	chrome.bookmarks.getTree((bookmarks) => {
+		renderBookmarkMenu(bookmarks[0].children);
+	});
+}
+function showBookmark() {
+	var menu = document.getElementById("menu");
+	if (menu.style.display === "none") {
+		menu.style.display = "block";
+	} else {
+		menu.style.display = "none";
+	}
+	var menuBtn = document.getElementById("menu-btn2");
+		menuBtn.style.display = "none";
+	function renderBookmarkMenu(bookmarks) {
+		const container = document.getElementById('bookmark-container');
+		// container.innerHTML = '';
+
+		function createBookmarkItem(bookmark) {
+			const item = document.createElement('div');
+			item.classList.add('bookmark-item');
+
+			// const icon = document.createElement('img');
+			// icon.classList.add('bookmark-icon');
+			// console.log(bookmark);
+			// icon.src = bookmark.iconUrl || 'default_icon.png'; // 使用默认图标如果书签没有图标
+			// item.appendChild(icon);
+
+			const title = document.createElement('span');
+			title.textContent = bookmark.title;
+			item.appendChild(title);
+
+			item.addEventListener('click', () => {
+				console.log(bookmark.url);
+			});
+
+			return item;
+		}
+
+		function renderBookmarks(bookmarks, level = 0) {
+			for (const bookmark of bookmarks) {
+				const item = createBookmarkItem(bookmark);
+				container.appendChild(item);
+				if (bookmark.children && bookmark.children.length > 0) {
+					renderBookmarks(bookmark.children, level + 1);
+				}
+			}
+		}
+
+		renderBookmarks(bookmarks);
+	}
+
+	chrome.bookmarks.getTree((bookmarks) => {
+		renderBookmarkMenu(bookmarks[0].children);
+	});
+}
 // openweb("https://zhuanlan.zhihu.com/p/426034604", true);
 
 /* TODO

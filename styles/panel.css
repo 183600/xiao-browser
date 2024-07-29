@@ -80,6 +80,7 @@ body {
   background: var(--ext-primary-background);
   color: var(--ext-primary-font-color);
   overflow: hidden;
+      font-family: Arial, sans-serif;
 }
 
 .hostpermission {
@@ -984,7 +985,14 @@ iframe {
   /* border: 1px solid #ccc; */
     border-radius: 25px;
   display: none;
+  overflow: auto;
+  height: 400px;
 }
+/* .bookmark-container {
+  overflow-y: scroll;
+  overflow: auto;
+  height: 200px;
+} */
 
 .menu-btn {
   display: flex;
@@ -1004,3 +1012,18 @@ iframe {
   .fujia {
     display: none;
   }
+    .bookmark-item {
+        display: flex;
+        align-items: center;
+        padding: 8px 12px;
+        cursor: pointer;
+        color: #333;
+      }
+      .bookmark-item:hover {
+        background-color: #f0f0f0;
+      }
+      .bookmark-icon {
+        width: 16px;
+        height: 16px;
+        margin-right: 8px;
+      }

@@ -1271,9 +1271,10 @@ const addPage = () => {
 }
 
 const openSettings = () => {
+	// Code to open the settings
+	chrome.tabs.create({ url: "options.html" });
 	//   window.location.href = "options.html";
 	//   window.location.href = "chrome://bookmarks/";
-	// Code to open the settings
 }
 
 
@@ -1285,48 +1286,12 @@ function showMenu2() {
 		menu.style.display = "none";
 	}
 	var menuBtn = document.getElementById("menu-btn2");
-		menuBtn.style.display = "block";
-	function renderBookmarkMenu(bookmarks) {
-		const container = document.getElementById('bookmark-container');
-		// container.innerHTML = '';
-
-		function createBookmarkItem(bookmark) {
-			const item = document.createElement('div');
-			item.classList.add('bookmark-item');
-
-			// const icon = document.createElement('img');
-			// icon.classList.add('bookmark-icon');
-			// console.log(bookmark);
-			// icon.src = bookmark.iconUrl || 'default_icon.png'; // 使用默认图标如果书签没有图标
-			// item.appendChild(icon);
-
-			const title = document.createElement('span');
-			title.textContent = bookmark.title;
-			item.appendChild(title);
-
-			item.addEventListener('click', () => {
-				console.log(bookmark.url);
-			});
-
-			return item;
-		}
-
-		function renderBookmarks(bookmarks, level = 0) {
-			for (const bookmark of bookmarks) {
-				const item = createBookmarkItem(bookmark);
-				container.appendChild(item);
-				if (bookmark.children && bookmark.children.length > 0) {
-					renderBookmarks(bookmark.children, level + 1);
-				}
-			}
-		}
-
-		renderBookmarks(bookmarks);
-	}
-
-	chrome.bookmarks.getTree((bookmarks) => {
-		renderBookmarkMenu(bookmarks[0].children);
-	});
+	menuBtn.style.display = "block";
+	var bookmarkContainer = document.getElementById("bookmark-container");
+	bookmarkContainer.style.display = "none";
+	// var menu = document.getElementById("menu");
+	menu.style.height = "auto";
+	// menu.style.height = "400px";
 }
 function showBookmark() {
 	var menu = document.getElementById("menu");
@@ -1336,7 +1301,9 @@ function showBookmark() {
 		menu.style.display = "none";
 	}
 	var menuBtn = document.getElementById("menu-btn2");
-		menuBtn.style.display = "none";
+	menuBtn.style.display = "none";
+	var bookmarkContainer = document.getElementById("bookmark-container");
+	bookmarkContainer.style.display = "block";
 	function renderBookmarkMenu(bookmarks) {
 		const container = document.getElementById('bookmark-container');
 		// container.innerHTML = '';

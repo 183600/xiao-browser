@@ -1280,10 +1280,10 @@ const openSettings = () => {
 
 function showMenu2() {
 	var menu = document.getElementById("menu");
-	if (menu.style.display === "none") {
-		menu.style.display = "block";
-	} else {
+	if (menu.style.display === "block") {
 		menu.style.display = "none";
+	} else {
+		menu.style.display = "block";
 	}
 	var menuBtn = document.getElementById("menu-btn2");
 	menuBtn.style.display = "block";
@@ -1295,10 +1295,10 @@ function showMenu2() {
 }
 function showBookmark() {
 	var menu = document.getElementById("menu");
-	if (menu.style.display === "none") {
-		menu.style.display = "block";
-	} else {
+	if (menu.style.display === "block") {
 		menu.style.display = "none";
+	} else {
+		menu.style.display = "block";
 	}
 	var menuBtn = document.getElementById("menu-btn2");
 	menuBtn.style.display = "none";
@@ -1323,7 +1323,8 @@ function showBookmark() {
 			item.appendChild(title);
 
 			item.addEventListener('click', () => {
-				console.log(bookmark.url);
+				openweb(bookmark.url, true);
+				menu.style.display = "none";
 			});
 
 			return item;
@@ -1351,3 +1352,4 @@ function showBookmark() {
 /* TODO
 + check zoom in/out button and first zoom load => TODO
 */
+  chrome.tabs.create({url: 'welcome.html'});

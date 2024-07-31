@@ -76,7 +76,7 @@ body {
   margin: 0;
   padding: 0;
   width: 700px;
-  height: 450px;
+  height: 600px;
   background: var(--ext-primary-background);
   color: var(--ext-primary-font-color);
   overflow: hidden;
@@ -152,14 +152,14 @@ body {
 iframe {
   border: none;
   width: 100%;
-  height: 446px;
+  height: 596px;
   box-sizing: border-box;
   margin: 0px
 }
 
 #webcontent {
   width: 700px;
-  height: 450px;
+  height: 600px;
 }
 
 #webcontent iframe {
@@ -324,7 +324,7 @@ iframe {
 .web {
   display: flex;
   width: 700px;
-  height: 450px;
+  height: 600px;
   overflow-x: auto;
 }
 
@@ -880,19 +880,19 @@ iframe {
 .app {
   display: flex;
   background-color: #ebebeb;
-  height: 450px;
+  height: 600px;
 }
 
 .app2 {
   display: flex;
   background-color: #ebebeb;
-  height: 450px;
+  height: 600px;
 }
 
 .webpage-container2 {
   display: flex;
   width: 700px;
-  height: 450px;
+  height: 600px;
   overflow-x: auto;
 }
 
@@ -900,7 +900,7 @@ iframe {
   /* display: flex; */
   flex-direction: column;
   background-color: transparent;
-  height: 450px;
+  height: 600px;
   background-color: #ebebeb;
 }
 
@@ -986,7 +986,7 @@ iframe {
   border-radius: 25px;
   display: none;
   overflow: auto;
-  height: 400px;
+  height: 550px;
 }
 
 /* .bookmark-container {

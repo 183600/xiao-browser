@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>关于获取网页词频</title>
+    <title>关于小浏览器</title>
     <link rel="stylesheet" href="layui/css/layui.css">
     <style>
         body,
@@ -35,7 +35,17 @@
             align-items: center;
             /*所有子元素都垂直居中了*/
             justify-content: center;
-            height: 500px;
+            margin-top: 200px;
+            height: 400px;
+        }
+
+        .yizhengpinclassn2 {
+            display: flex;
+            align-items: center;
+            /*所有子元素都垂直居中了*/
+            justify-content: center;
+            margin-bottom: 150px;
+            height: 200px;
         }
 
         .yizhengpinclassqq {
@@ -61,6 +71,7 @@
 
         .tupian {
             border-radius: 5%;
+            margin-top: 30px;
         }
 
         p {
@@ -82,6 +93,15 @@
             margin-bottom: 105px;
             font-size: 20px;
         }
+
+        .qq {
+            display: flex;
+            align-items: center;
+            /*所有子元素都垂直居中了*/
+            justify-content: center;
+            height: 500px;
+            flex-direction: column;
+        }
     </style>
 </head>
 
@@ -93,16 +113,16 @@
             <div class="layui-col-md11">
                 <div class="layui-card">
                     <div class="layui-card-header">
-                        <span class="word-frequency">获取网页词频</span>
+                        <span class="word-frequency">小浏览器</span>
                     </div>
                 </div>
                 <div class="layui-container">
                     <div class="yizhengpinclassqq" id="yizhengpin3" align="center" align-items="center">
-                        <div align="center" align-items="center">
-                            <h1 align="center">QQ群</h1>
+                        <div class="qq" align="center" align-items="center">
+                            <h1 align="center">推荐加QQ群</h1>
                             <button type="button" class="layui-btn layui-btn-normal layui-btn-radius"
-                                id="qun">加入QQ群获取网页词频交流群:854260276</button>
-                            <img class="tupian" src="qq.jpeg" width="700" />
+                                id="qun">加QQ群</button>
+                            <img class="tupian" src="qq.jpeg" width="200" />
                         </div>
                     </div>
                     <div class="yizhengpinclassn" id="yizhengpin" align="center" align-items="center">
@@ -111,11 +131,14 @@
                             <button type="button" class="layui-btn layui-btn-normal layui-btn-radius"
                                 id="yuanmagitee">gitee项目地址</button>
                             <button type="button" class="layui-btn layui-btn-normal layui-btn-radius"
-                                id="yuanmagitcode">gitcode项目地址</button>
+                                id="yuanmagithub">github项目地址</button>
+                        </div>
+                    </div>
+                    <div class="yizhengpinclassn2" id="yizhengpin" align="center" align-items="center">
+                        <div align="center" align-items="center">
+                            <h1 align="center">官网</h1>
                             <button type="button" class="layui-btn layui-btn-normal layui-btn-radius"
-                                id="yuanmagiteefirefoxban">gitee项目地址（Firefox版）</button>
-                            <button type="button" class="layui-btn layui-btn-normal layui-btn-radius"
-                                id="yuanmagitcodefirefoxban">gitcode项目地址（Firefox版）</button>
+                                id="fangwenguanwang">访问</button>
                         </div>
                     </div>
                     <div class="yizhengpinclass" id="yizhengpin2" align="center" align-items="center">
@@ -127,11 +150,15 @@
                                 <button type="button" class="layui-btn layui-btn-normal layui-btn-radius"
                                     id="gitee">gitee:183600</button>
                                 <button type="button" class="layui-btn layui-btn-normal layui-btn-radius"
+                                    id="github">github:183600</button>
+                                <button type="button" class="layui-btn layui-btn-normal layui-btn-radius"
                                     id="gitcode">gitcode:qwe12345678</button>
                                 <button type="button" class="layui-btn layui-btn-normal layui-btn-radius"
                                     id="QQ">QQ:3025385472</button>
                                 <button type="button" class="layui-btn layui-btn-normal layui-btn-radius"
                                     id="kuan">酷安:qwe12345678</button>
+                                <button type="button" class="layui-btn layui-btn-normal layui-btn-radius"
+                                    id="QQ">小红书:qwe12345678</button>
                             </div>
                         </div>
                     </div>
@@ -142,7 +169,7 @@
     </div>
 
     <script src="layui/layui.js"></script>
-    <script src="js/welcome.js"></script>
+    <script src="scripts/welcome.js"></script>
 </body>
 
 </html>

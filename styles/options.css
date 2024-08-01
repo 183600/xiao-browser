@@ -1,7 +1,7 @@
 /*
 //================================================
 
-Page Sidebar
+Xiao Browser
 Effortlessly open any website in your web browser's sidebar – streamline your workflow instantly!
 Copyright (C) 2024 Stefan vd
 www.stefanvd.net
@@ -277,7 +277,7 @@ section>div:only-of-type{-webkit-box-flex:1}
 #tllo{position:absolute;font-size:16px;top:25px;right:30px;color:var(--totl-primary-font-color)}
 #nt{position:absolute;font-size:12px;font-weight:700;color:var(--totl-primary-font-color);text-transform:uppercase;top:60px;left:50px;cursor:pointer}
 #war{position:absolute;font-size:12px;font-weight:700;color:#39F;text-transform:uppercase;top:60px;right:30px;cursor:pointer}
-/* Page Sidebar buttons */
+/* Xiao Browser buttons */
 .buttoncolor{padding:10px;height:19px;width:19px}
 .minibrowserpreview{width:100%;display:flex;flex-direction:row;justify-content:flex-start;align-items:center}
 .minibrowserpreview .columnA{width:60%}

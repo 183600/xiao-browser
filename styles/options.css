@@ -542,3 +542,112 @@ only screen and (max-device-width:480px){
 only screen and (max-device-width:480px) and (orientation:portrait){
   #dont-turn-off-the-lights{width:100%;height:auto;aspect-ratio:16/9}
 }
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .layui-card-header {
+            margin-top: 5px;
+            display: flex;
+            align-items: center;
+            /* 垂直居中 */
+            height: 70px;
+        }
+
+        .word-frequency {
+            height: 70px;
+            font-size: 24px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            /* 垂直居中 */
+        }
+
+        .yizhengpinclassn {
+            display: flex;
+            align-items: center;
+            /*所有子元素都垂直居中了*/
+            justify-content: center;
+            /* margin-top: 200px; */
+            height: 400px;
+        }
+
+        .yizhengpinclassn2 {
+            display: flex;
+            align-items: center;
+            /*所有子元素都垂直居中了*/
+            justify-content: center;
+            margin-bottom: 150px;
+            height: 200px;
+        }
+
+        .yizhengpinclassqq {
+            display: flex;
+            justify-content: center;
+            height: 300px;
+        }
+
+        .word-frequency2touxiang {
+            border-radius: 50%;
+        }
+
+        .zhichi {
+            font-size: 15px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            margin-top: 50px;
+            margin-bottom: 20px;
+        }
+
+        .tupian {
+            border-radius: 5%;
+            margin-top: 30px;
+        }
+
+        p {
+            font-size: 20px;
+        }
+
+        .word-frequency2 {
+            margin-left: 20px;
+            font-size: 30px;
+        }
+
+        .kaifazhezhanghao {
+            margin-top: 20px;
+            font-size: 20px;
+        }
+
+        .banquansuoyou {
+            margin-top: 105px;
+            margin-bottom: 105px;
+            font-size: 20px;
+        }
+
+        .qq {
+            display: flex;
+            align-items: center;
+            /*所有子元素都垂直居中了*/
+            justify-content: center;
+            height: 550px;
+            flex-direction: column;
+        }
+
+        .jieshao {
+            display: flex;
+            align-items: center;
+            /*所有子元素都垂直居中了*/
+            justify-content: center;
+            margin-top: 400px;
+            height: 100px;
+        }
+
+        .yinxang {
+  display: none;
+        }

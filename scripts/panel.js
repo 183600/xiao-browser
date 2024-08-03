@@ -1352,4 +1352,3 @@ function showBookmark() {
 /* TODO
 + check zoom in/out button and first zoom load => TODO
 */
-  chrome.tabs.create({url: 'welcome.html'});

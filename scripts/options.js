@@ -453,10 +453,10 @@ function yearnow(){
 function setappearancemode(a, b, c){
 	$("dropmenu").className = a;
 	document.body.className = b;
-	$("headlamp").style.webkitFilter = c;
-	$("headlamp").style.filter = c;
-	$("loadinglamp").style.webkitFilter = c;
-	$("loadinglamp").style.filter = c;
+	// $("headlamp").style.webkitFilter = c;
+	// $("headlamp").style.filter = c;
+	// $("loadinglamp").style.webkitFilter = c;
+	// $("loadinglamp").style.filter = c;
 }
 
 function godarkmode(){

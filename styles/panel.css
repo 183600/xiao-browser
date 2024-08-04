@@ -173,10 +173,6 @@ iframe {
   background-color: rgba(0, 0, 0, 0.5)
 }
 
-.web {
-  position: relative
-}
-
 #drag-drop-navbar {
   z-index: 2000;
   -webkit-backdrop-filter: blur(10px);
@@ -1012,10 +1008,6 @@ iframe {
   height: 15px;
   margin-right: 5px;
 } */
-
-.fujia {
-  display: none;
-}
 
 .bookmark-item {
   display: flex;

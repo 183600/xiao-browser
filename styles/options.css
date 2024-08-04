@@ -651,3 +651,9 @@ only screen and (max-device-width:480px) and (orientation:portrait){
         .yinxang {
   display: none;
         }
+        .guanyuyincang {
+  display: none;
+        }
+        .managed-prefs-banner {
+  display: none;
+        }

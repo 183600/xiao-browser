@@ -939,3 +939,6 @@ function domcontentloaded(){
 	}
 
 }
+// document.getElementById("element-id").style.display = "none";
+// document.getElementById("guanyuyincang").style.display = "none";
+// document.getElementById("managed-prefs-banner").style.display = "none";

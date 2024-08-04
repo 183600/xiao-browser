@@ -1,12 +1,3 @@
-
-
-
-
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -67,23 +58,60 @@ To view a copy of this license, visit http://creativecommons.org/licenses/GPL/2.
                     </div>
                 </div>
                 <div id="psidebar" class="container">
-                    <!-- <div id="web" class="web">
-                    <div id="drag-drop-info" class="show">
-                        <img alt="Link" width="128" height="128" src="images/link.png"
-                            srcset="images/link.png 1x, images/link@2x.png 2x">
-                        <div class="placeholder"><span data-i18n="desdragdrop"></span></div>
-                    </div>
-                    <div id="drag-drop-zone"></div>
-                    <div id="webcontent"></div>
-                    <div id="stefanvdpromo" class="hidden">
-                        <div class="box">
-                            <div class="red"><span data-i18n="stefanvdpromonew"></span></div>
-                            <a href="https://www.stefanvd.net/project/browser-extension/?utm_source=notessidebar&utm_medium=referral&utm_campaign=browserextension-promo"
-                                target="_blank"><span data-i18n="stefanvdpromotext"></span></a>
-                            <div class="close">✕</div>
+                    <div id="web">
+                        <div class="toolbar">
+                            <!-- <button @click="showMenu = !showMenu" class="toolbar-btn">
+        <img src="@/icons/menu.svg" alt="Menu" class="toolbar-icon">
+      </button> -->
+                            <div class="menu-button" id="bookmark-button2">
+                                <img src="src/icons/bookmark_border.svg" alt="Menu" class="toolbar-icon">
+                            </div>
+                            <!-- <div class="menu-button" @click="openCustomPage">
+                <img src="src/icons/sort.svg" alt="Menu" class="toolbar-icon">
+            </div> -->
+                            <div class="menu-button-container">
+                                <div class="menu-button-container2" id="menu-button2">
+                                    <div class="menu-button3">
+                                        <img src="src/icons/menu.svg" alt="Menu" class="toolbar-icon">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <script type="text/javascript">
+                            </script> -->
+                        </div>
+                        <div id="web" class="web">
+                            <div id="drag-drop-info" class="show">
+                                <img alt="Link" width="128" height="128" src="images/link.png"
+                                    srcset="images/link.png 1x, images/link@2x.png 2x">
+                                <div class="placeholder"><span data-i18n="desdragdrop"></span></div>
+                            </div>
+                            <div id="drag-drop-zone"></div>
+                            <div id="webcontent"></div>
+                            <div id="stefanvdpromo" class="hidden">
+                                <div class="box">
+                                    <div class="red"><span data-i18n="stefanvdpromonew"></span></div>
+                                    <a href="https://www.stefanvd.net/project/browser-extension/?utm_source=notessidebar&utm_medium=referral&utm_campaign=browserextension-promo"
+                                        target="_blank"><span data-i18n="stefanvdpromotext"></span></a>
+                                    <div class="close">✕</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="menu" class="menu">
+                            <!-- <button @click="addPage" class="menu-btn">
+                <img src="src/icons/add.svg" alt="Add Page" class="menu-icon">
+                新建标签页打开
+            </button>
+            <button @click="addPage" class="menu-btn">
+                <img src="src/icons/add.svg" alt="Add Page" class="menu-icon">
+                添加固定在左侧的网页
+            </button> -->
+                            <button class="menu-btn" id="menu-btn2">
+                                <!-- <img src="src/icons/settings.svg" alt="Settings" class="menu-icon"> -->
+                                设置
+                            </button>
+                            <div id="bookmark-container"></div>
                         </div>
                     </div>
-                </div> -->
                     <div class="toolbar">
                         <button @click="showMenu = !showMenu" class="toolbar-btn">
                             <img src="src/icons/menu.svg" alt="Menu" class="toolbar-icon">
@@ -172,58 +200,6 @@ To view a copy of this license, visit http://creativecommons.org/licenses/GPL/2.
 
         </div>
 
-        <div class="toolbar">
-            <!-- <button @click="showMenu = !showMenu" class="toolbar-btn">
-        <img src="@/icons/menu.svg" alt="Menu" class="toolbar-icon">
-      </button> -->
-            <div class="menu-button" id="bookmark-button2">
-                <img src="src/icons/bookmark_border.svg" alt="Menu" class="toolbar-icon">
-            </div>
-            <!-- <div class="menu-button" @click="openCustomPage">
-                <img src="src/icons/sort.svg" alt="Menu" class="toolbar-icon">
-            </div> -->
-            <div class="menu-button-container">
-                <div class="menu-button-container2" id="menu-button2">
-                    <div class="menu-button3">
-                        <img src="src/icons/menu.svg" alt="Menu" class="toolbar-icon">
-                    </div>
-                </div>
-            </div>
-            <script type="text/javascript">
-            </script>
-        </div>
-        <div id="web" class="web">
-            <div id="drag-drop-info" class="show">
-                <img alt="Link" width="128" height="128" src="images/link.png"
-                    srcset="images/link.png 1x, images/link@2x.png 2x">
-                <div class="placeholder"><span data-i18n="desdragdrop"></span></div>
-            </div>
-            <div id="drag-drop-zone"></div>
-            <div id="webcontent"></div>
-            <div id="stefanvdpromo" class="hidden">
-                <div class="box">
-                    <div class="red"><span data-i18n="stefanvdpromonew"></span></div>
-                    <a href="https://www.stefanvd.net/project/browser-extension/?utm_source=notessidebar&utm_medium=referral&utm_campaign=browserextension-promo"
-                        target="_blank"><span data-i18n="stefanvdpromotext"></span></a>
-                    <div class="close">✕</div>
-                </div>
-            </div>
-        </div>
-        <div id="menu" class="menu">
-            <!-- <button @click="addPage" class="menu-btn">
-                <img src="src/icons/add.svg" alt="Add Page" class="menu-icon">
-                新建标签页打开
-            </button>
-            <button @click="addPage" class="menu-btn">
-                <img src="src/icons/add.svg" alt="Add Page" class="menu-icon">
-                添加固定在左侧的网页
-            </button> -->
-            <button class="menu-btn" id="menu-btn2">
-                <!-- <img src="src/icons/settings.svg" alt="Settings" class="menu-icon"> -->
-                设置
-            </button>
-               <div id="bookmark-container"></div>
-        </div>
     </div>
 </body>
 

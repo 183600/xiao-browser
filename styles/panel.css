@@ -173,7 +173,7 @@ iframe {
   background-color: rgba(0, 0, 0, 0.5)
 }
 
-#drag-drop-navbar {
+#navbar {
   z-index: 2000;
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
@@ -878,6 +878,11 @@ iframe {
   background-color: #ebebeb;
   height: 600px;
 }
+
+.web2 {
+  display: flex;
+  background-color: #ebebeb;
+  height: 600px;
 
 .app2 {
   display: flex;

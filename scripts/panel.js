@@ -361,12 +361,36 @@ function init() {
 		if (navtop == true) {
 			var elementt = document.getElementById("psidebar");
 			elementt.classList.add("top");
+// 假设你有一个id为"myElement"的元素
+var element = document.getElementById("web2");
+
+element.style.marginBottom = "0px";
+
+element.style.marginTop = "48px";
+
+element.style.height = "552px";
 		} else if (navbottom == true) {
 			var elementb = document.getElementById("psidebar");
 			elementb.classList.add("bottom");
+// 假设你有一个id为"myElement"的元素
+var element = document.getElementById("web2");
+
+element.style.marginBottom = "48px";
+
+element.style.marginTop = "0px";
+
+element.style.height = "552px";
 		} else if (navhidden == true) {
 			var elementc = document.getElementById("psidebar");
 			elementc.classList.add("clean");
+// 假设你有一个id为"myElement"的元素
+var element = document.getElementById("web2");
+
+element.style.marginBottom = "0px";
+
+element.style.marginTop = "0px";
+
+element.style.height = "600px";
 		}
 
 		// navigation bar

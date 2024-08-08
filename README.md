@@ -1,6 +1,6 @@
 # 小浏览器
-- 基于Page Sidebar修改
-- 基于chrome-extensions-samples-main修改
+- 基于Page Sidebar修改，我修改过部分文件。
+- 基于chrome-extensions-samples-main修改，我修改过部分文件。
 - 本项目使用GPL许可开源
 - 本项目是一个chrome扩展
 - 弹出弹窗在里面显示一个浏览器

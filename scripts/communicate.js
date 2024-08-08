@@ -23,6 +23,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 To view a copy of this license, visit http://creativecommons.org/licenses/GPL/2.0/
 
+      Copyright 2024 183600
     本项目基于chrome-extensions-samples-main修改，并且此文件可能修改了，以下为原项目的版权声明
  Copyright 2023 Google LLC
 

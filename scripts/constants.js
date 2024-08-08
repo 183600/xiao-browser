@@ -1,4 +1,5 @@
 /* eslint-disable no-unused-vars */
+      //Copyright 2024 183600
 const exbrowser = "chrome";
 // values: "chrome", "safari", "edge", "firefox", "opera", "yandex", "whale"
 const linkredirectionoptions = "https://www.stefanvd.net/project/page-sidebar/browser/options/";

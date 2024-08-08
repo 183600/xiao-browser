@@ -45,7 +45,7 @@ function defaultgetsettings(){
 		}
 		if(items["contextmenus"] == null){ firstdefaultvalues["contextmenus"] = true; }
 		if(items["searchgoogle"] == null && items["searchbing"] == null && items["searchduckduckgo"] == null && items["searchbaidu"] == null && items["searchyandex"] == null){ firstdefaultvalues["searchgoogle"] = true; firstdefaultvalues["searchbing"] = false; firstdefaultvalues["searchduckduckgo"] = false; firstdefaultvalues["searchbaidu"] = false; firstdefaultvalues["searchyandex"] = false; }
-		if(items["navtop"] == null && items["navbottom"] == null && items["navhidden"] == null){ firstdefaultvalues["navtop"] = true; firstdefaultvalues["navbottom"] = false; firstdefaultvalues["navhidden"] = false; }
+		if(items["navtop"] == null && items["navbottom"] == null && items["navhidden"] == null){ firstdefaultvalues["navtop"] = false; firstdefaultvalues["navbottom"] = false; firstdefaultvalues["navhidden"] = true; }
 		if(items["websitezoomname"] == null){ firstdefaultvalues["websitezoomname"] = "https://www.google.com"; }
 		if(items["typepanelzone"] == null && items["typepanelcustom"] == null && items["typepanellasttime"] == null){
 			firstdefaultvalues["typepanelzone"] = true;

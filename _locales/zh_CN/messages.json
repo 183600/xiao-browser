@@ -133,7 +133,7 @@
 "descontextmenu": {"message": "显示上下文菜单以在侧边栏中打开当前网页"},
 "linktitle": {"message": "在侧边栏中打开链接"},
 "pagetitle": {"message": "在侧边栏中打开当前网页"},
-"guide": {"message": "侧边栏使用指南"},
+"guide": {"message": "使用指南"},
 "basicsettings": {"message": "基本设置"},
 "changelog": {"message": "更新日志"},
 "stefanvdpromonew": {"message": "新功能!"},

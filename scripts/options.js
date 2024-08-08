@@ -4,6 +4,7 @@
 Xiao Browser
 Effortlessly open any website in your web browser's sidebar – streamline your workflow instantly!
 Copyright (C) 2024 Stefan vd
+      Copyright 2024 183600
 www.stefanvd.net
 
 This program is free software; you can redistribute it and/or

@@ -62,8 +62,5 @@
 		"sidePanel",
 		"bookmarks",
 		"declarativeNetRequestWithHostAccess"
-	],
-	"optional_permissions": [
-		"bookmarks"
 	]
 }

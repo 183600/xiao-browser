@@ -46,10 +46,10 @@ function defaultgetsettings(){
 		if(items["contextmenus"] == null){ firstdefaultvalues["contextmenus"] = true; }
 		if(items["searchgoogle"] == null && items["searchbing"] == null && items["searchduckduckgo"] == null && items["searchbaidu"] == null && items["searchyandex"] == null){ firstdefaultvalues["searchgoogle"] = true; firstdefaultvalues["searchbing"] = false; firstdefaultvalues["searchduckduckgo"] = false; firstdefaultvalues["searchbaidu"] = false; firstdefaultvalues["searchyandex"] = false; }
 		if(items["navtop"] == null && items["navbottom"] == null && items["navhidden"] == null){ firstdefaultvalues["navtop"] = false; firstdefaultvalues["navbottom"] = false; firstdefaultvalues["navhidden"] = true; }
-		if(items["websitezoomname"] == null){ firstdefaultvalues["websitezoomname"] = "https://www.google.com"; }
+		if(items["websitezoomname"] == null){ firstdefaultvalues["websitezoomname"] = ""; }
 		if(items["typepanelzone"] == null && items["typepanelcustom"] == null && items["typepanellasttime"] == null){
-			firstdefaultvalues["typepanelzone"] = true;
-			firstdefaultvalues["typepanelcustom"] = false;
+			firstdefaultvalues["typepanelzone"] = false;
+			firstdefaultvalues["typepanelcustom"] = true;
 			firstdefaultvalues["typepanellasttime"] = false;
 		}
 		if(items["websitename1"] == null){ firstdefaultvalues["websitename1"] = "Google"; }
@@ -183,7 +183,7 @@ function read_options(){
 		if(items["typepanelzone"] == true){ $("typepanelzone").checked = true; }
 		if(items["typepanelcustom"] == true){ $("typepanelcustom").checked = true; }
 		if(items["typepanellasttime"] == true){ $("typepanellasttime").checked = true; }
-		if(items["websitezoomname"]){ $("websitezoomname").value = items["websitezoomname"]; }else $("websitezoomname").value = "https://www.google.com";
+		if(items["websitezoomname"]){ $("websitezoomname").value = items["websitezoomname"]; }else $("websitezoomname").value = "";
 		if(items["opentab"] == true){ $("opentab").checked = true; }
 		if(items["opencopy"] == true){ $("opencopy").checked = true; }
 		if(items["opennonebookmarks"]){ $("opennonebookmarks").checked = true; }

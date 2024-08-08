@@ -923,7 +923,7 @@ overflow:hidden;
   flex-direction: column;
   background-color: transparent;
   /*height: 600px;*/
-  background-color: #ebebeb;
+  background-color: #ffffff;
 }
 
 .menu-button-container {
@@ -999,7 +999,7 @@ overflow:hidden;
 
 .menu {
   position: absolute;
-  background-color: #dddddd;
+  background-color: #ebebeb;
   padding: 10px;
   margin: 30px;
   bottom: 0;

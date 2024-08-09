@@ -17,7 +17,6 @@ See the License for the specific language governing permissions and
 limitations under the License.
 //================================================
 */
-	chrome.tabs.create({ url: "options.html" });
 // 找到要添加点击事件的按钮元素
 var button = document.getElementById("gitee");
 
@@ -81,3 +80,8 @@ button.addEventListener("click", function () {
     // 在点击事件发生后访问链接
   chrome.tabs.create({url: 'https://minibrowser7.wordpress.com/'});
 });
+var result = confirm('请打开设置确保正常运行');
+if (result) {
+  // 用户点击了确定
+  chrome.tabs.create({url: 'options.html'});
+}

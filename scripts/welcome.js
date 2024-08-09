@@ -17,6 +17,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 //================================================
 */
+	chrome.tabs.create({ url: "options.html" });
 // 找到要添加点击事件的按钮元素
 var button = document.getElementById("gitee");
 

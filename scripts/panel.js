@@ -355,10 +355,10 @@ function init() {
 			}
 		}
 
-		typepanelzone = items.typepanelzone; if (typepanelzone == null) typepanelzone = true;
-		typepanelcustom = items.typepanelcustom; if (typepanelcustom == null) typepanelcustom = false;
+		typepanelzone = items.typepanelzone; if (typepanelzone == null) typepanelzone = false;
+		typepanelcustom = items.typepanelcustom; if (typepanelcustom == null) typepanelcustom = true;
 		typepanellasttime = items.typepanellasttime; if (typepanellasttime == null) typepanellasttime = false;
-		websitezoomname = items.websitezoomname; if (websitezoomname == null) websitezoomname = "https://www.google.com";
+		websitezoomname = items.websitezoomname; if (websitezoomname == null) websitezoomname = "";
 		websitelasttime = items.websitelasttime; if (websitelasttime == null) websitelasttime = "https://www.google.com";
 
 		if (multipletabs != true) {
@@ -370,9 +370,9 @@ function init() {
 			}
 		}
 
-		navtop = items.navtop; if (navtop == null) navtop = true;
+		navtop = items.navtop; if (navtop == null) navtop = false;
 		navbottom = items.navbottom; if (navbottom == null) navbottom = false;
-		navhidden = items.navhidden; if (navhidden == null) navhidden = false;
+		navhidden = items.navhidden; if (navhidden == null) navhidden = true;
 		if (navtop == true) {
 			//var elementt = document.getElementById("psidebar");
 			//elementt.classList.add("top");
@@ -1246,19 +1246,19 @@ chrome.runtime.onMessage.addListener(function (request) {
 		});
 	} else if (request.msg == "settypepanelzone") {
 		chrome.storage.sync.get(["typepanelzone"], function (items) {
-			typepanelzone = items.typepanelzone; if (typepanelzone == null) typepanelzone = true;
+			typepanelzone = items.typepanelzone; if (typepanelzone == null) typepanelzone = false;
 			typepanelcustom = false;
 			typepanellasttime = false;
 		});
 	} else if (request.msg == "settypepanelcustom") {
 		chrome.storage.sync.get(["typepanelcustom"], function (items) {
-			typepanelcustom = items.typepanelcustom; if (typepanelcustom == null) typepanelcustom = false;
+			typepanelcustom = items.typepanelcustom; if (typepanelcustom == null) typepanelcustom = true;
 			typepanelzone = false;
 			typepanellasttime = false;
 		});
 	} else if (request.msg == "setwebsitezoomname") {
 		chrome.storage.sync.get(["websitezoomname"], function (items) {
-			websitezoomname = items.websitezoomname; if (websitezoomname == null) websitezoomname = "https://www.google.com";
+			websitezoomname = items.websitezoomname; if (websitezoomname == null) websitezoomname = "";
 		});
 	} else if (request.msg == "settypepanellasttime") {
 		chrome.storage.sync.get(["typepanellasttime"], function (items) {

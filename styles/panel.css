@@ -1009,6 +1009,7 @@ overflow:hidden;
   display: none;
   overflow: auto;
   height: 502px;
+  width: 630px;
 }
 
 /* .bookmark-container {

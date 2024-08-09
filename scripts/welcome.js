@@ -80,7 +80,7 @@ button.addEventListener("click", function () {
     // 在点击事件发生后访问链接
   chrome.tabs.create({url: 'https://minibrowser7.wordpress.com/'});
 });
-var result = confirm('请打开设置确保正常运行');
+var result = confirm('请打开设置确保正常运行(只需要打开一次)');
 if (result) {
   // 用户点击了确定
   chrome.tabs.create({url: 'options.html'});

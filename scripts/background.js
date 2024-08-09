@@ -526,7 +526,7 @@ chrome.runtime.setUninstallURL(linkuninstall);
 function initwelcome(){
 	chrome.storage.sync.get(["firstRun"], function(chromeset){
 		if((chromeset["firstRun"] != "false") && (chromeset["firstRun"] != false)){
-			chrome.tabs.create({url: linkwelcome});
+      chrome.tabs.create({url: linkwelcome});
 			var crrinstall = new Date().getTime();
 			chrome.storage.sync.set({"firstRun": false, "version": "1.0", "firstDate": crrinstall});
 		}
